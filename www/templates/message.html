@@ -1,0 +1,13 @@
+<ion-pane ng-controller="MessageCtrl">
+      <header frosted-bar class="bar bar-header bar-frosted">
+        <ion-nav-back-button class="button-clear"><i class="icon ion-ios7-arrow-back"></i> Back</ion-nav-back-button>
+        <h1 class="title">{{message.from}}</h1>
+      </header>
+      <ion-content padding="true" class="has-header" start-y="120"><ol class="messages"><li ng-repeat="message in messages" ng-bind-html="message.content"></li>
+        </ol>
+      </ion-content>
+      <ion-footer-bar class="bar-frosted">
+        <input type="text" ng-submit="submit(content)">
+        <button class="button button-clear button-positive" ng-click="add()">Add Message</button>
+      </ion-footer-bar>
+    </ion-pane>

@@ -1,0 +1,33 @@
+
+<ion-view title="Messages">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-compose" ng-click="modal.show()"></button>
+</ion-nav-buttons>
+
+  <ion-content class="has-header">
+  <div class="row responsive-md">
+      <div class="col col-50">
+        <button class="button button-block button-positive">
+         Messages
+        </button>
+      </div>
+      <div class="col col-50">
+         <button class="button button-block button-balanced">
+            Queue
+          </button>
+      </div>
+    </div>
+    <ion-list>
+      <ion-item ng-repeat="message in messages" href="#/app/messages/{{message.id}}">
+      <div class="row responsive-md">
+        <div class="col .col-10 pull-left"> {{message.from}}</div>
+        <div class="col .col-20 "> {{message.title}}</div>
+        <div class="col .col-10 pull-right"> {{message.time}}</div>
+      </div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
